@@ -30,9 +30,7 @@ def evaluateTaylor(x):
 
 
 def fillSudokuRow(sudokuRow):
-    sodukoRow = sodukoRow
-    for n in sodukoRow:
-        if n == 0:
-            if sodukoRow.contains(1):
-                sudokuRow = 1
+    for n in sudokuRow:
+        if sudokuRow[n-1] == 0:
+            sudokuRow[n-1] = 45-np.sum(sudokuRow)           
     return sudokuRow
