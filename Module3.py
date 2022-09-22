@@ -38,5 +38,15 @@ def acuteAngle(v1, v2):
     return theta
 
 def computePassesGoalLine(point, directionVector):
-
+    if np.less(directionVector[0],0):
+        alpha = (0-point[0])/directionVector[0]
+        y = point[1] + alpha *directionVector[1]
+    else:
+        alpha = (105-point[0])/directionVector[0]
+        y = point[1] + alpha *directionVector[1]
+    
+    if np.greater(y, 30.34) and np.less(y, 37.66):
+        score = True
+    else:
+        score = False
     return score
