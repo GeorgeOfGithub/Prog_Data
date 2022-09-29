@@ -29,3 +29,21 @@ def circleAreaMC(xvals, yvals):
             n = np.append(n,1)
     A = 4 * np.size(n)/N
     return A
+
+def convertTemperature(T, unitFrom, unitTo):
+    if unitFrom == "Celsius":
+        if unitTo == "Fahrenheit":
+            T = 1.8 * T +32
+        else:
+            T = T + 273.15
+    elif unitFrom == "Fahrenheit":
+        if unitTo == "Celsius":
+            T = (T-32)/(1.8)
+        else:
+            T = (T+459.67)/(1.8)
+    else:
+        if unitTo == "Celsius":
+            T = T -273.15
+        else:
+            1.8*T-459.67
+    return T
