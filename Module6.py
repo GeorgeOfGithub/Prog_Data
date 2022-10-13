@@ -48,6 +48,7 @@ def computeItemCost(resourceItemMatrix, resourceCost):
 
 def computeLanguageError(freq):
     letters = pd.read_csv("letter_frequencies.csv")
+    print(letters)
     E = np.zeros(0)
 
     for j in range(15):
@@ -63,3 +64,5 @@ def computeLanguageError(freq):
         
         
     return E
+
+print(computeLanguageError("nice"))
